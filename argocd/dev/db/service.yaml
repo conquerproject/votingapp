@@ -5,7 +5,7 @@ metadata:
   labels:
     app: db
   name: db
-  namespace: votingapp
+  namespace: votingapp-dev
 spec:
   ports:
   - port: 5432

@@ -4,7 +4,7 @@ metadata:
   labels:
     app: db
   name: db
-  namespace: votingapp
+  namespace: votingapp-dev
 spec:
   replicas: 1
   selector:

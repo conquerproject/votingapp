@@ -5,7 +5,7 @@ metadata:
   labels:
     app: result
   name: result
-  namespace: votingapp
+  namespace: votingapp-dev
 spec:
   ports:
   - port: 80
