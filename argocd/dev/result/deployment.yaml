@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: result
+  name: result
+  namespace: votingapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: result
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: result
+    spec:
+      containers:
+      - image: dockersamples/examplevotingapp_result
+        name: examplevotingapp-result-vhr4p
+        ports:
+        - containerPort: 80
+        command: ["/usr/bin/tini", "--"]
+        args: ["node", "server.js"]
+        resources: {}
+status: {}

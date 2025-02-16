@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: vote
+  name: vote
+  namespace: votingapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vote
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: vote
+    spec:
+      containers:
+      - image: dockersamples/examplevotingapp_vote
+        name: examplevotingapp-vote-wfh47
+        ports:
+        - containerPort: 80
+        env:
+          - name: FLASK_ENV
+            value: development
+        command: [ "python" ]
+        args: [ "app.py" ]
+        resources: {}
+status: {}
